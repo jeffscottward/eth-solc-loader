@@ -1,0 +1,47 @@
+{
+  "name": "eth-solc-loader",
+  "version": "0.0.0",
+  "description": "Webpack loader for Solidity compilation",
+  "bugs": "https://github.com/jeffscottward/eth-solc-loader/issues",
+  "author": "jeffscottward <jeffscottward@consensys.net>",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffscottward/eth-solc-loader"
+  },
+  "keywords": [
+    "eth-solc-loader",
+    "solc",
+    "eth",
+    "solidity",
+    "webpack",
+    "npm",
+    "node",
+    "module"
+  ],
+  "dependencies": {
+    "solc": "^0.1.6"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.8",
+    "tape": "^4.0.1",
+    "tap-spec": "^4.0.2",
+    "gaze-cli": "^0.2.0",
+    "standard": "^4.5.0"
+  },
+  "scripts": {
+    "prepublish": "npm run lint",
+    "istanbul": "istanbul cover test/index.js",
+    "lint": "standard",
+    "test": "node test/index.js | tap-spec",
+    "test:watch": "gaze 'npm test' 'test/**/*.js' 'lib/**/*.js' 'index.js'",
+    "start": "npm run test:watch"
+  }
+}
